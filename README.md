@@ -7,15 +7,15 @@
 ![npm](https://img.shields.io/npm/dm/@better-typed/react-window-hooks)
 ![GitHub stars](https://img.shields.io/github/stars/BetterTyped/react-window-hooks?style=social)
 
-> Easy query params handling for React
+> Detect device type, handle events and window size
 
 - [Better Typed](https://github.com/BetterTyped)
 
 ## Features
 
 - :rocket: Simple, fast and light
-- :factory: Set, Update, Delete, Clear
-- 🪗 Provider for global configs and any environment
+- :factory: Detect device type
+- 🪗 Lifecycle events handling
 
 ## Install
 
