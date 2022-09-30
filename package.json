@@ -1,6 +1,6 @@
 {
   "name": "@better-typed/react-window-hooks",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "author": "prc5",
   "license": "MIT",
   "description": "React window hooks",
@@ -89,7 +89,6 @@
     "useWillUnmount"
   ],
   "dependencies": {
-    "@better-typed/react-lifecycle-hooks": "^1.0.5",
-    "mobile-detect": "^1.4.5"
+    "@better-typed/react-lifecycle-hooks": "^1.0.5"
   }
 }

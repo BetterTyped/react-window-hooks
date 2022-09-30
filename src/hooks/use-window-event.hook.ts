@@ -7,27 +7,37 @@ type EventHandler<T extends Event = Event> = (e: T) => void;
 
 type WindowEventHook = {
   <K extends keyof WindowEventMap>(
-    eventName: K,
+    value: K | [K, AddEventListenerOptions],
     handler: EventHandler<WindowEventMap[K]>,
-    options?: boolean | (AddEventListenerOptions & { disable?: boolean }),
+    dependencies?: any[],
   ): void;
 };
 
-export const useWindowEvent: WindowEventHook = (eventName, handler, options) => {
+const unpackValue = <K extends keyof WindowEventMap>(
+  value: K | [K, AddEventListenerOptions],
+): [K, AddEventListenerOptions] => {
+  if (typeof value === "string") {
+    return [value, {}];
+  }
+  return value;
+};
+
+export const useWindowEvent: WindowEventHook = (value, handler, dependencies = []) => {
   const didUnmount = useRef(false);
   useWillUnmount(() => (didUnmount.current = true));
 
-  const isClient = getIsClient();
-
   useDidUpdate(
     () => {
-      const { disable = false, ...windowOptions } = typeof options === "object" ? options : {};
-      if (!isClient || disable) return;
+      const isClient = getIsClient();
+      if (!isClient) return;
 
-      window.addEventListener(eventName, handler, windowOptions);
-      return () => window.removeEventListener(eventName, handler, windowOptions);
+      const [name, options] = unpackValue(value);
+      const windowOptions = typeof options === "object" ? options : {};
+
+      window.addEventListener(name, handler, windowOptions);
+      return () => window.removeEventListener(name, handler, windowOptions);
     },
-    [eventName, options],
+    [JSON.stringify(value), ...dependencies],
     true,
   );
 };
