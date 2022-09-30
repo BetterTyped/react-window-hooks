@@ -7,15 +7,15 @@
 ![npm](https://img.shields.io/npm/dm/@better-typed/react-window-hooks)
 ![GitHub stars](https://img.shields.io/github/stars/BetterTyped/react-window-hooks?style=social)
 
-> Detect device type, handle events and window size
+> Handle window events and observe window size
 
 - [Better Typed](https://github.com/BetterTyped)
 
 ## Features
 
 - :rocket: Simple, fast and light
-- :factory: Detect device type
-- 🪗 Lifecycle events handling
+- :factory: Observe window size
+- 🪗 Lifecycle window events handling
 
 ## Install
 
@@ -29,33 +29,6 @@ or
 yarn add @better-typed/react-window-hooks
 ```
 
-## useWindowDevice
-
-```tsx
-import React from "react";
-import { useWindowDevice } from "@better-typed/react-window-hooks";
-
-const MyComponent: React.FC = () => {
-  const device = useWindowDevice()
-
-  console.log(device.mobile() );          // 'Sony'
-  console.log(device.phone() );           // 'Sony'
-  console.log(device.tablet() );          // null
-  console.log(device.userAgent() );       // 'Safari'
-  console.log(device.os() );              // 'AndroidOS'
-  console.log(device.is('iPhone') );      // false
-  console.log(device.is('bot') );         // false
-  console.log(device.version('Webkit') );         // 534.3
-  console.log(device.versionStr('Build') );       // '4.1.A.0.562'
-  console.log(device.match('playstation|xbox') ); // false
-
-  return (
-    // ...
-  )
-}
-
-```
-
 ## useWindowEvent
 
 ```tsx
@@ -65,6 +38,23 @@ import { useWindowEvent } from "@better-typed/react-window-hooks";
 const MyComponent: React.FC = () => {
   // Unmounts event with component lifecycle
   useWindowEvent("resize", () => {
+    // ... Do something
+  });
+
+  return (
+    // ...
+  )
+}
+
+```
+
+```tsx
+import React from "react";
+import { useWindowEvent } from "@better-typed/react-window-hooks";
+
+const MyComponent: React.FC = () => {
+  // Unmounts event with component lifecycle
+  useWindowEvent("scroll", () => {
     // ... Do something
   });
 
