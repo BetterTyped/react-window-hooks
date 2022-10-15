@@ -23,7 +23,8 @@
     "postinstall": "yarn husky install",
     "prepare": "install-peers",
     "lint": "eslint . --ext .js,.jsx,.tsx,.ts --fix",
-    "test": "jest"
+    "test": "jest",
+    "release": "yarn semantic-release --extends ./releaserc.json"
   },
   "eslintConfig": {
     "extends": [
