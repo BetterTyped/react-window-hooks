@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { getIsClient } from "utils";
-import useWindowEvent from "./use-window-event.hook";
+import { useWindowEvent } from "./use-window-event.hook";
 
 export type WindowWidthType = number;
 export type WindowHeightType = number;

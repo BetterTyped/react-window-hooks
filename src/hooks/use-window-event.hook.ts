@@ -24,7 +24,9 @@ const unpackValue = <K extends keyof WindowEventMap>(
 
 export const useWindowEvent: WindowEventHook = (value, handler, dependencies = []) => {
   const didUnmount = useRef(false);
-  useWillUnmount(() => (didUnmount.current = true));
+  useWillUnmount(() => {
+    didUnmount.current = true;
+  });
 
   useDidUpdate(
     () => {
@@ -41,5 +43,3 @@ export const useWindowEvent: WindowEventHook = (value, handler, dependencies = [
     true,
   );
 };
-
-export default useWindowEvent;
