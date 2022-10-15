@@ -1,10 +1,10 @@
 # React Window Hooks
 
-[![NPM](https://img.shields.io/npm/v/@better-typed/react-window-hooks.svg)](https://www.npmjs.com/package/@better-typed/react-window-hooks)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@better-typed/react-window-hooks)
-![npm type definitions](https://img.shields.io/npm/types/@better-typed/react-window-hooks)
-![NPM](https://img.shields.io/npm/l/@better-typed/react-window-hooks)
-![npm](https://img.shields.io/npm/dm/@better-typed/react-window-hooks)
+[![NPM](https://img.shields.io/npm/v/@better-hooks/window.svg)](https://www.npmjs.com/package/@better-hooks/window)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@better-hooks/window)
+![npm type definitions](https://img.shields.io/npm/types/@better-hooks/window)
+![NPM](https://img.shields.io/npm/l/@better-hooks/window)
+![npm](https://img.shields.io/npm/dm/@better-hooks/window)
 ![GitHub stars](https://img.shields.io/github/stars/BetterTyped/react-window-hooks?style=social)
 
 > Handle window events and observe window size
@@ -20,20 +20,20 @@
 ## Install
 
 ```bash
-npm install --save @better-typed/react-window-hooks
+npm install --save @better-hooks/window
 ```
 
 or
 
 ```bash
-yarn add @better-typed/react-window-hooks
+yarn add @better-hooks/window
 ```
 
 ## useWindowEvent
 
 ```tsx
 import React from "react";
-import { useWindowEvent } from "@better-typed/react-window-hooks";
+import { useWindowEvent } from "@better-hooks/window";
 
 const MyComponent: React.FC = () => {
   // Unmounts event with component lifecycle
@@ -50,7 +50,7 @@ const MyComponent: React.FC = () => {
 
 ```tsx
 import React from "react";
-import { useWindowEvent } from "@better-typed/react-window-hooks";
+import { useWindowEvent } from "@better-hooks/window";
 
 const MyComponent: React.FC = () => {
   // Unmounts event with component lifecycle
@@ -69,7 +69,7 @@ const MyComponent: React.FC = () => {
 
 ```tsx
 import React from "react";
-import { useWindowSize } from "@better-typed/react-window-hooks";
+import { useWindowSize } from "@better-hooks/window";
 
 const MyComponent: React.FC = () => {
   // Updates with resizing
