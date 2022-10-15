@@ -24,7 +24,7 @@
     "prepare": "install-peers",
     "lint": "eslint . --ext .js,.jsx,.tsx,.ts --fix",
     "test": "jest",
-    "release": "yarn semantic-release --extends ./releaserc.json"
+    "release": "yarn semantic-release"
   },
   "eslintConfig": {
     "extends": [
