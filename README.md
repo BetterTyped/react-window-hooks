@@ -13,14 +13,14 @@
   <a href="https://github.com/semantic-release/semantic-release">
     <img src="https://custom-icon-badges.demolab.com/badge/semver-commitzen-e10079?logo=semantic-release&color=e76f51" />
   </a>
-  <a href="https://www.npmjs.com/package/@better-hooks/window">
-    <img src="https://custom-icon-badges.demolab.com/npm/v/@better-hooks/window.svg?logo=npm&color=E10098" />
-  </a>
   <a href="https://github.com/BetterTyped/react-window-hooks">
     <img src="https://custom-icon-badges.demolab.com/badge/typescript-%23007ACC.svg?logo=typescript&logoColor=white" />
   </a>
   <a href="https://www.npmjs.com/package/@better-hooks/window">
     <img src="https://custom-icon-badges.demolab.com/bundlephobia/min/@better-hooks/window?color=64BC4B&logo=package" />
+  </a>
+  <a href="https://www.npmjs.com/package/@better-hooks/window">
+    <img src="https://custom-icon-badges.demolab.com/npm/v/@better-hooks/window.svg?logo=npm&color=E10098" />
   </a>
 </p>
 
