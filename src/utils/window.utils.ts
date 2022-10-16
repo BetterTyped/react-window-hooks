@@ -1,7 +1,1 @@
-export const getIsClient = () => {
-  try {
-    return !!window.addEventListener;
-  } catch (err) {
-    return false;
-  }
-};
+export const isBrowser = typeof window !== "undefined";

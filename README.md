@@ -17,10 +17,13 @@
     <img src="https://custom-icon-badges.demolab.com/badge/typescript-%23007ACC.svg?logo=typescript&logoColor=white" />
   </a>
   <a href="https://www.npmjs.com/package/@better-hooks/window">
-    <img src="https://custom-icon-badges.demolab.com/bundlephobia/min/@better-hooks/window?color=64BC4B&logo=package" />
+    <img src="https://custom-icon-badges.demolab.com/npm/v/@better-hooks/window.svg?logo=npm&color=E10098" />
   </a>
   <a href="https://www.npmjs.com/package/@better-hooks/window">
-    <img src="https://custom-icon-badges.demolab.com/npm/v/@better-hooks/window.svg?logo=npm&color=E10098" />
+    <img src="https://custom-icon-badges.demolab.com/bundlephobia/minzip/@better-hooks/window?color=blueviolet&logo=package" />
+  </a>
+  <a href="https://www.npmjs.com/package/@better-hooks/window">
+    <img src="https://custom-icon-badges.demolab.com/npm/dm/@better-hooks/window?logoColor=fff&logo=trending-up" />
   </a>
 </p>
 
@@ -34,9 +37,17 @@ Handle window events and observe window size
 
 🚀 **Fast and light**
 
-✨ **Lifecycle window events**
+✨ **Lifecycle Window events**
+
+💎 **Lifecycle Document events**
 
 🎯 **Window size**
+
+🪄 **Window scroll position**
+
+💡 **Window focus**
+
+🎊 **SSR Support**
 
 ## Installation
 
@@ -55,23 +66,6 @@ yarn add @better-hooks/window
 ## Examples
 
 #### useWindowEvent
-
-```tsx
-import React from "react";
-import { useWindowEvent } from "@better-hooks/window";
-
-const MyComponent: React.FC = () => {
-  // Unmounts event with component lifecycle
-  useWindowEvent("resize", () => {
-    // ... Do something
-  });
-
-  return (
-    // ...
-  )
-}
-
-```
 
 ```tsx
 import React from "react";
@@ -100,6 +94,31 @@ const MyComponent: React.FC = () => {
 
 ---
 
+#### useDocumentEvent
+
+```tsx
+import React from "react";
+import { useDocumentEvent } from "@better-hooks/window";
+
+const MyComponent: React.FC = () => {
+  // Unmounts event with component lifecycle
+  useDocumentEvent("visibilitychange", () => {
+    // ... Do something
+  });
+
+  useDocumentEvent("scroll", () => {
+    // ... Do something
+  });
+
+  return (
+    // ...
+  )
+}
+
+```
+
+---
+
 #### useWindowSize
 
 ```tsx
@@ -109,6 +128,52 @@ import { useWindowSize } from "@better-hooks/window";
 const MyComponent: React.FC = () => {
   // Updates with resizing
   const [width, height] = useWindowSize()
+
+  return (
+    // ...
+  )
+}
+
+```
+
+---
+
+#### useWindowScroll
+
+```tsx
+import React from "react";
+import { useWindowScroll } from "@better-hooks/window";
+
+const MyComponent: React.FC = () => {
+  // Updates when scrolling
+  const [x, y] = useWindowScroll()
+
+  return (
+    // ...
+  )
+}
+
+```
+
+---
+
+#### useWindowFocus
+
+```tsx
+import React from "react";
+import { useWindowFocus } from "@better-hooks/window";
+
+const MyComponent: React.FC = () => {
+  // Updates when user leave our page
+  const focus = useWindowFocus()
+
+  useEffect(() => {
+    if(focus) {
+      // User is using our page
+    } else {
+      // User has minimized window or leaved our page to different tab
+    }
+  }, [focus])
 
   return (
     // ...
