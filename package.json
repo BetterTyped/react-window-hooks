@@ -116,16 +116,10 @@
     "react",
     "hooks",
     "lifecycle",
-    "use",
-    "did",
-    "mount",
-    "update",
-    "unmount",
-    "render",
-    "hook",
-    "useDidMount",
-    "useDidUnmount",
-    "useDidRender",
-    "useWillUnmount"
+    "useWindowScroll",
+    "useWindowEvent",
+    "useWindowFocus",
+    "useDocumentEvent",
+    "useIsomorphicEvent"
   ]
 }
